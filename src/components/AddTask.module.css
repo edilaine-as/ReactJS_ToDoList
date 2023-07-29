@@ -4,34 +4,48 @@
     height: 3.375rem;
 }
 
-.textBox > div{
+.textBoxContent{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    
     position: absolute;
     top: 10.5625rem;
 
 }
 
-.textBox > div > input{
+.textBoxContent > input{
     width: 39.875rem;
     padding: 1rem;
-    margin: 0 0.5rem;
-    border: 1px solid var(--gray-700);
-    border-radius: 8px;
+
     background-color: var(--gray-500);
     color: var(--gray-100);
+    border: 1px solid var(--gray-700);
+    border-radius: 8px;
 
 }
 
-.textBox > div > input:focus{
+.textBoxContent > input:focus{
     outline: 1px solid var(--purple-500);
 }
 
-.textBox > div > button{
+.textBoxContent > button{
     width: 5.625rem;
     padding: 1rem;
-    border: none;
-    border-radius: 8px;
+
     background-color: var(--blue-500);
     color: var(--gray-100);
+    border: 0;
+    border-radius: 8px;
     font-weight: 700;
     font-size: 0.875rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.textBoxContent > button:hover{
+    background-color: var(--blue-300)
 }

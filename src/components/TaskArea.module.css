@@ -1,0 +1,58 @@
+.taskArea{
+    display: flex;
+    justify-content: center;
+}
+
+.taskAreaContent{
+    width: 46rem;
+    margin-top: 4rem;
+}
+
+.taskAreaHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.tasksCreated, .tasksCompleted{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.tasksCreated > button, .tasksCompleted > button{
+    border: 0;
+    border-radius: 999px;
+    background-color: var(--gray-400);
+    color: var(--gray-200);
+
+    font-weight: 700;
+    font-size: 0.75rem;
+    width: 1.5625rem;
+
+}
+
+.tasksCreated{
+    color: var(--blue-300);
+}
+
+.tasksCompleted{
+    color: var(--purple-300);
+}
+
+.tasksAreaMain{
+    border-top: 1px solid var(--gray-400);
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tasksAreaMain > img{
+    margin-top: 4rem;
+    height: 3.5rem;
+}

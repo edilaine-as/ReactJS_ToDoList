@@ -1,0 +1,43 @@
+.task{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 0.75rem;
+
+    height: 4.5rem;
+    padding: 1rem;
+    background-color: var(--gray-500);
+    border: 1px solid var(--gray-400);
+    border-top: 0;
+    border-radius: 8px;
+}
+
+.taskDescription{
+    font-size: 0.875rem;
+    color: var(--gray-100);
+}
+
+.deleteTask{
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 4px;
+
+    background-color: transparent;
+    color: var(--gray-300);
+}
+
+.deleteTask:hover{
+    border: 0;
+    background-color: var(--gray-400);
+    color: var(--red-200);
+    
+}
+
+.iconDeleteTask{
+    display: flex;
+    align-content: center;
+    
+    margin: auto;
+}

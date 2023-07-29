@@ -1,0 +1,8 @@
+.tasksAreaMainTextEmpty{
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.tasksAreaMainTextEmpty > p{
+    font-weight: 700;
+}
