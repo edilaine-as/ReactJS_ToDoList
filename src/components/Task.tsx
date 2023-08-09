@@ -3,7 +3,12 @@ import styles from './Task.module.css'
 import { Checkbox } from './Checkbox'
 import { useState } from 'react';
 
-export function Task(){
+interface TaskProps{
+    content: string;
+    onDeleteTask: (task: string) => void;
+}
+
+export function Task(props: TaskProps){
 
     const [isChecked, setIsChecked] = useState(false);
 
@@ -11,11 +16,15 @@ export function Task(){
         setIsChecked(!isChecked);
     };
 
+    function handleDeleteTask(){
+        props.onDeleteTask(props.content);
+    }
+
     return(
         <div className={styles.task}>
             <Checkbox isChecked={isChecked} onChangeCheckbox={handleCheckboxChange} />
-            <label className={styles.taskDescription}>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</label>
-            <button className={styles.deleteTask}>
+            <label className={styles.taskDescription}>{props.content}</label>
+            <button onClick={handleDeleteTask} className={styles.deleteTask} title='Deletar tarefa'>
                 <Trash className={styles.iconDeleteTask}/>  
             </button>
         </div>
