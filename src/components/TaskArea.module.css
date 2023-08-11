@@ -31,7 +31,8 @@
 
     font-weight: 700;
     font-size: 0.75rem;
-    width: 1.5625rem;
+    min-width: 1.5625rem;
+    padding: 0 0.5rem;
 
 }
 

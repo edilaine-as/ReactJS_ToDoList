@@ -12,9 +12,7 @@ interface TaskProviderProps {
 }
 
 export function TaskProvider({ children }:TaskProviderProps){
-    const [tasks, setTasks] = useState<string[]>([
-      "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
-    ]);
+    const [tasks, setTasks] = useState<string[]>([]);
   
     const updateTasks = (newTasks: string[]) => {
       setTasks(newTasks);
