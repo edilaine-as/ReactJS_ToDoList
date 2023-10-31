@@ -4,12 +4,11 @@ import { ChangeEvent, useState } from 'react';
 import { useTaskContext } from './TaskContext';
 
 export function AddTask(){
-    const { tasks, updateTasks } = useTaskContext();
+    const { addNewTask } = useTaskContext();
     const [newTaskText, setNewTaskText] = useState('');
 
     function handleCreateNewTask(){
-        const newTasks = [...tasks, newTaskText];
-        updateTasks(newTasks);
+        addNewTask(newTaskText);
         setNewTaskText('');
     }
 

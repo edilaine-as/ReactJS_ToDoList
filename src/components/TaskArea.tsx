@@ -5,11 +5,19 @@ import { v4 as uuidv4 } from 'uuid';
 import { EmptyList } from './EmptyList';
 
 export function TaskArea(){
-    const { tasks, updateTasks } = useTaskContext();
+
+    const { tasks, updateTasks, toggleTaskChecked } = useTaskContext();
+
+    const tasksFinished = tasks.reduce((count, task) => {
+        if (task.checked) {
+            return count + 1;
+        }
+        return count;
+    }, 0);
 
     function deleteTask(taskToDelete: string){
         const tasksWithoutDeleteOne = tasks.filter(task => {
-            return task !== taskToDelete;
+            return task.content !== taskToDelete;
         })
 
         updateTasks(tasksWithoutDeleteOne);
@@ -25,7 +33,7 @@ export function TaskArea(){
                     </div>
                     <div className={styles.tasksCompleted}>
                         <p>Concluídas</p>
-                        <button>{tasks.length} de 10</button>
+                        <button>{tasksFinished} de {tasks.length}</button>
                     </div>
 
                 </header>
@@ -37,8 +45,10 @@ export function TaskArea(){
                         tasks.map(task => (
                             <Task 
                                 key={uuidv4()} 
-                                content={task} 
+                                checked={task.checked}
+                                content={task.content}
                                 onDeleteTask={deleteTask}
+                                onToggleTaskChecked={toggleTaskChecked}
                             />
                         ))
                     )}
