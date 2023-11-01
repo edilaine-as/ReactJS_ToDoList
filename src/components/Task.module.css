@@ -17,6 +17,18 @@
 .taskDescription{
     font-size: 0.875rem;
     color: var(--gray-100);
+    width: 100%;
+    text-align: left;
+}
+
+.taskDescriptionChecked{
+    color: var(--gray-300);
+    text-decoration: line-through;
+}
+
+.taskDescriptionNotChecked{
+    color: var(--gray-100);
+    text-decoration: none;
 }
 
 .deleteTask{

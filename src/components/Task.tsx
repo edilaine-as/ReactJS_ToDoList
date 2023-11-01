@@ -1,7 +1,6 @@
 import { Trash } from 'phosphor-react'
 import styles from './Task.module.css'
 import { Checkbox } from './Checkbox'
-import { useTaskContext } from './TaskContext';
 
 interface TaskProps{
     content: string;
@@ -23,7 +22,7 @@ export function Task(props: TaskProps){
     return(
         <div className={styles.task}>
             <Checkbox isChecked={props.checked} onChangeCheckbox={handleCheckboxChange} />
-            <label className={styles.taskDescription}>{props.content}</label>
+            <label className={`${styles.taskDescription} ${props.checked? styles.taskDescriptionChecked : styles.taskDescriptionNotChecked}`}>{props.content}</label>
             <button onClick={handleDeleteTask} className={styles.deleteTask} title='Deletar tarefa'>
                 <Trash className={styles.iconDeleteTask}/>  
             </button>
